@@ -11,9 +11,13 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'products' => [
+            'class' => 'app\modules\products\Module',
+        ],
+    ],
     'components' => [
         'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'NbPk6UBtOlb-3HPgHCBEw254QulkLvoR',
         ],
         'cache' => [
@@ -29,7 +33,6 @@ $config = [
         'mailer' => [
             'class' => \yii\symfonymailer\Mailer::class,
             'viewPath' => '@app/mail',
-            // send all mails to a file by default.
             'useFileTransport' => true,
         ],
         'log' => [
@@ -46,6 +49,32 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => [
+                        'products/default'
+                    ]
+                ],
+                [
+                    'pattern' => 'products',
+                    'route' => 'products/default/create',
+                    'verb' => 'POST',
+                ],
+                [
+                    'pattern' => 'products/<id:\d+>',
+                    'route' => 'products/default/view',
+                    'verb' => 'GET',
+                ],
+                [
+                    'pattern' => 'products/<id:\d+>',
+                    'route' => 'products/default/update',
+                    'verb' => 'PATCH',
+                ],
+                [
+                    'pattern' => 'products/<id:\d+>',
+                    'route' => 'products/default/delete',
+                    'verb' => 'DELETE',
+                ],
             ],
         ],
     ],
@@ -53,19 +82,14 @@ $config = [
 ];
 
 if (YII_ENV_DEV) {
-    // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
-        'class' => 'yii\debug\Module',
-        // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+        'class' => 'yii\debug\Module'
     ];
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
-        // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
         'allowedIPs' => ['*'],
     ];
 }
