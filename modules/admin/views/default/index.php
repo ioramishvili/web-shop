@@ -15,7 +15,6 @@ $this->title = 'Управление товарами';
             <input type="text" v-model="searchTerm" @input="filterProducts" placeholder="Поиск товаров">
         </div>
 
-
         <div class="card-container">
             <div class="card" v-for="product in filteredProducts">
                 <h2 class="card-text">{{product.name}}</h2>

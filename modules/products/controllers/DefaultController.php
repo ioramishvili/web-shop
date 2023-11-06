@@ -31,11 +31,6 @@ class DefaultController extends ActiveController
         ]);
     }
 
-    public function actionView(int $id): Products
-    {
-        return Products::findOne($id);
-    }
-
     /**
      * @throws InvalidConfigException
      */

@@ -24,7 +24,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'https://cdn.jsdelivr.net/npm/vue/dist/vue.js',
-        'assets\script.js'
+        'assets/script.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
