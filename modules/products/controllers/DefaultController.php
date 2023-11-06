@@ -27,10 +27,7 @@ class DefaultController extends ActiveController
     public function actionIndex(): ArrayDataProvider
     {
         return new ArrayDataProvider([
-            'allModels' => Products::find()->all(),
-            'pagination' => [
-                'pageSize' => 10
-            ],
+            'allModels' => Products::find()->all()
         ]);
     }
 

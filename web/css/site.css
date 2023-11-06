@@ -86,3 +86,42 @@ a.desc:after {
 .form-group {
     margin-bottom: 1rem;
 }
+
+/* Общие стили для контейнера с карточками */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    box-sizing: border-box; /* Учитываем отступы внутри контейнера */
+}
+
+/* Стили для карточки товара */
+.card {
+    width: calc(25% - 20px); /* 25% ширины с учетом промежутков */
+    background-color: #f1f1f1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+    margin-bottom: 20px; /* Отступ между карточками */
+    box-sizing: border-box; /* Учитываем отступы внутри карточки */
+}
+
+/* Стили для текста (название, цена и описание) */
+.card-text {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Респонсивные стили для различных размеров экрана */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* 50% ширины на маленьких экранах */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* 100% ширины на очень маленьких экранах */
+    }
+}

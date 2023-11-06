@@ -5,8 +5,11 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'name' => 'Магазин',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language'=>'ru',
+    'sourceLanguage'=>'ru',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -14,6 +17,9 @@ $config = [
     'modules' => [
         'products' => [
             'class' => 'app\modules\products\Module',
+        ],
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
         ],
     ],
     'components' => [
