@@ -16,7 +16,7 @@ class m231105_183228_CreateProductsTable extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
             'description' => $this->text()->null(),
-            'price' => $this->integer()->notNull(),
+            'price' => $this->float()->notNull(),
         ]);
     }
 

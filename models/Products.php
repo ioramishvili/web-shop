@@ -10,7 +10,7 @@ use yii\db\ActiveRecord;
  * This is the model class for table "bookings".
  *
  * @property integer $id
- * @property integer $price
+ * @property float $price
  * @property string $name
  * @property string $description
  *
